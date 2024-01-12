@@ -135,21 +135,21 @@ contactTag.addEventListener('click',function(){
 let about_text = document.createElement('pre');
 aboutTag.addEventListener('click', function(){
     document.querySelector('.box3').append(close_cont);
-    // document.querySelector('.box3').classList.add('about_box');
+    document.querySelector('.box3').classList.add('about_box');
     close_cont.append(bar1);
     close_cont.append(bar2);
-    // document.querySelector('.box3').append(about_text);
-    // about_text.classList.add('about_text_pre');
+    document.querySelector('.box3').append(about_text);
+    about_text.classList.add('about_text_pre');
     
     close_cont.classList.add('close_container');
     bar1.classList.add('bars', 'bar1');
     bar2.classList.add('bars', 'bar2');
-//     about_text.innerHTML = `Hey there! I am  Himanshu, a first year engineering student currently based
-//     in India.I have a strong passion for working on new projects, with a 
-//             particular emphasis on transition and micro animations. 
-// In my free time I enjoy drawing, reading, cooking, dancing and learning 
-//                         about different language and cultures. 
-//                                     Thank you for visiting!`;
+    about_text.innerHTML = `Hey there! I am  Himanshu, a first year engineering student currently based
+    in India.I have a strong passion for working on new projects, with a 
+            particular emphasis on transition and micro animations. 
+In my free time I enjoy drawing, reading, cooking, dancing and learning 
+                        about different language and cultures. 
+                                    Thank you for visiting!`;
 })
 //making content for the work conatiner
 workTag.addEventListener('click', function(){
@@ -179,7 +179,28 @@ close_cont.addEventListener('click',function(){
                 return function(){
                     document.querySelector(`.box${i}`).classList.remove('boxTransition_come');
                     document.querySelector(`.box${i}`).classList.remove('boxTransition_go');
-    
+
+                    //removing items of the contact details
+        
+                    contact_tagline.remove();
+                    contact_details_container.remove();
+                    contact_details.remove();
+                    social_tags.remove();
+                    pre_contact_1.remove();
+                    pre_contact_2.remove();
+                    contact_det_1.remove();
+                    contact_det_2.remove();
+                    social_tag_1.remove();
+                    social_tag_2.remove();
+                    social_tag_3.remove();
+                    social_tag_4.remove();
+                    contact_detail_heading.remove();
+                    social_tags_heading.remove();
+                    
+
+                    //removing the items of about one
+                    about_text.remove();
+                    document.querySelector('.box3').classList.remove('about_box');
                 }
             }(i),1800*i);  
         }    
