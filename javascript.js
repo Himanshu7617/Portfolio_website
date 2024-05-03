@@ -13,11 +13,24 @@ let aboutTag = document.querySelector('.navItem2');
 let contactTag = document.querySelector('.navItem3');
 
 
-//making the circle slide in
-navItems.forEach(function(navItem){
-    navItem.addEventListener('mouseenter', function(){
-        this.classList.add('hover');
-        circle1.classList.add('slide');
+//making the function for circles to handle media queries 
+const mq = window.matchMedia("(max-width:1024px)");
+
+const handleCircleMediaQueries = (navItem)=>{
+    if (mq.matches){
+
+        // positioning the circles
+        if (navItem.classList.contains('navItem1')){
+            circle1.style.right = "6.1rem";
+        }
+        if (navItem.classList.contains('navItem2')){
+            circle1.style.right = "3.9rem";
+        }
+        if (navItem.classList.contains('navItem3')){
+            circle1.style.right = "1.4rem";
+        }
+    }else{
+        
         // positioning the circles
         if (navItem.classList.contains('navItem1')){
             circle1.style.right = "19.2rem";
@@ -28,6 +41,16 @@ navItems.forEach(function(navItem){
         if (navItem.classList.contains('navItem3')){
             circle1.style.right = "5.2rem";
         }
+    }
+}
+
+//making the circle slide in
+navItems.forEach(function(navItem){
+    navItem.addEventListener('mouseenter', function(){
+        this.classList.add('hover');
+        circle1.classList.add('slide');
+        handleCircleMediaQueries(navItem);
+
     })
 
 

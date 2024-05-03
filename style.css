@@ -57,12 +57,12 @@ body{
     transform: ScaleY(1);
 }
 p{
-    font-size: 20px;
+    font-size: 2rem;
     font-weight: 50;
     color: white;
     position: absolute;
-    top: 300px;
-    left: 50px;
+    top: 3.7rem;
+    left: 3rem;
     opacity: 0;
     transform: scaleX(0);
     transform-origin: left;
@@ -70,16 +70,16 @@ p{
 }
 #des.loaded{
     opacity: 100%;
-    transform: translateY(-120px);
+    transform: translateY(7.5rem);
 }
 #navbar_container{
     height: 6rem;
-    width: 24rem;
+    width: 100vw;
     position: absolute;
     top: 0;
     right: 0;
     display: flex;
-    justify-content: space-evenly;
+    justify-content:flex-end;
     align-items: center;
 
 }
@@ -88,7 +88,7 @@ p{
     color: white;
     font-size: 1.3rem;
     font-weight: 100;
-    margin: 0.2rem;
+    margin: 1rem;
     cursor: pointer;
     transition: transform 0.3s ease-in, color 0.3s ease-in;
 }
@@ -270,4 +270,61 @@ p{
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+
+@media (max-width: 1024px){
+    #Name{
+        font-size: 2rem;
+        font-weight: 300;
+        position: absolute;
+        top: 1rem;
+        left: 1rem;
+        
+    }
+    #Name_divider{
+        height: 0.05rem;
+        width: 8rem;
+       
+        position: absolute;
+        top: 3.5rem;
+        left: 1rem;
+  
+    }
+    p{
+        font-size: 0.5rem;
+        font-weight: 50;
+        position: absolute;
+        top: -3.8rem;
+        left: 1rem;
+       
+    }
+    #navbar_container{
+        height: 2rem;
+        width: 100vw;
+
+    
+    }
+    .navItems{
+  
+        font-size: 0.5rem;
+        font-weight: 80;
+        margin: 0.5rem;
+    
+    }
+    .circle{
+        height: 0.1rem;
+        width: 0.1rem;
+
+        top:1rem;
+        /*19.2, 12.5,5.2*/
+     /* 170 - 200 bottom right 
+        370 - 400*/
+    
+    }
+    .circle.slide{
+        transform: translateY(0.5rem);
+        opacity: 100%;
+    }
+
 }
